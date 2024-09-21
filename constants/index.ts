@@ -84,14 +84,17 @@ export const Skill_data = [
     {
       name: "Instagram",
       src: "/instagram.svg",
+      link: "https://pk.linkedin.com/in/hammadm1r"
     },
     {
       name: "Facebook",
       src: "/facebook.svg",
+      link: "https://pk.linkedin.com/in/hammadm1r"
     },
     {
       name: "LinkedIn",
       src: "/linkedin-svgrepo-com.svg",
+      link: "https://pk.linkedin.com/in/hammadm1r"
     },
   ];
   

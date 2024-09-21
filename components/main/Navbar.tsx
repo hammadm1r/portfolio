@@ -38,20 +38,7 @@ const Navbar = () => {
             <a href = "#Projects" className="cursor-pointer">Projects</a>
             </div>
         </div>*/}
-        <div className="flex flex-row gap-5 border border-[#7042f861]  mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            {
-                Socials.map((social)=>(
-                    <Image 
-                    className="cursor-pointer"
-                    src={social.src}
-                    alt={social.name}
-                    key={social.name}
-                    width={24}
-                    height={24}
-                    />
-                ))
-            }
-        </div> 
+        
       </div>
     </div>
   );

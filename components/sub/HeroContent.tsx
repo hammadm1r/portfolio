@@ -4,6 +4,7 @@ import {motion} from 'framer-motion'
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion'
 import { SparklesIcon,ArrowDownIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
+import { Socials } from "@/constants";
 function HeroContent() {
   return (
     <motion.div initial='hidden' animate="visible" className='flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]'>
@@ -18,6 +19,28 @@ function HeroContent() {
             <motion.p variants={slideInFromLeft(0.8)} className=' my-5 text-lg text-gray-400 max-w-[600px]' >
             I am a passionate MERN stack developer focused on creating dynamic, scalable, and user-centric web applications.
             </motion.p>
+            <div className="flex flex-row gap-5  mr-[15px] px-[20px] py-[10px]">
+            {
+                Socials.map((social)=>(
+                  <motion.div
+                  whileHover={{ scale: 1.5, rotate: 360 }}
+                  whileTap={{
+                    scale: 0.8,
+                    rotate: -90,
+                    borderRadius: "100%",
+                  }}
+                ><Image 
+                    className="cursor-pointer"
+                    src={social.src}
+                    alt={social.name}
+                    key={social.name}
+                    onClick={() => window.open(social.link, '_blank')}
+                    width={24}
+                    height={24}
+                    /></motion.div>
+                ))
+            }
+        </div> 
             <motion.a variants={slideInFromLeft(1)} className=' py-2 button-primary text-center text-white text-lg cursor-pointer max-w-[200px]' >
             Resume 
             </motion.a>
