@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { triggerAsyncId } from "async_hooks";
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -10,8 +12,10 @@ import { SparklesIcon, ArrowDownIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import { Socials } from "@/constants";
 const About = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
       animate="visible"
       className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
@@ -28,10 +32,18 @@ const About = () => {
         // whileHover={{ scale: 1.1, rotate: 360 }}
         className=" h-full w-full flex items-center justify-center"
       >
-        <Image src="/profileImage.jpeg" alt="work Icons" width={350} height={350} />
+        <Image
+          src="/Profile_Image.png"
+          alt="work Icons"
+          width={450}
+          height={450}
+        />
       </motion.div>
       <div className="flex flex-col h-full w-full justify-center m-auto text-start">
         <motion.div
+          ref={ref}
+          initial="hidden"
+          animate="visible"
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
@@ -39,7 +51,10 @@ const About = () => {
           <h1 className="Welcome-text text-[13px]">About Me</h1>
         </motion.div>
         <motion.div
-          variants={slideInFromLeft(0.5)}
+          ref={ref}
+          initial="hidden"
+          animate="visible"
+          variants={slideInFromRight(0.5)}
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
@@ -50,7 +65,10 @@ const About = () => {
           </span>
         </motion.div>
         <motion.p
-          variants={slideInFromLeft(0.8)}
+          ref={ref}
+          initial="hidden"
+          animate="visible"
+          variants={slideInFromRight(0.8)}
           className=" my-5 text-lg text-gray-400 max-w-[600px]"
         >
           As a passionate and dedicated web developer, I specialize in creating
@@ -62,6 +80,10 @@ const About = () => {
         <div className="flex flex-row gap-5  mr-[15px] px-[20px] py-[10px]">
           {Socials.map((social) => (
             <motion.div
+              ref={ref}
+              initial="hidden"
+              animate="visible"
+              variants={slideInFromRight(1)}
               whileHover={{ scale: 1.5, rotate: 360 }}
               whileTap={{
                 scale: 0.8,

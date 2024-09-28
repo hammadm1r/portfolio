@@ -11,6 +11,10 @@ const inter = Inter({subsets:['latin']})
 export const metadata: Metadata = {
   title: "Hammad Farooq Ahmed Meer",
   description: "This is My Portfolio",
+  icons:{ 
+    icon:"/favicon.ico",
+    apple:"favicon.ico"
+  }
 };
 
 export default function RootLayout({

@@ -28,7 +28,7 @@ const Skill = () => {
                 />
             ))}
         </div>
-        <div className='flex flex-row justify-around flex-wrap m-4 gap-5 items-center'>
+        {/* <div className='flex flex-row justify-around flex-wrap m-4 gap-5 items-center'>
             {Full_stack.map((image,index)=>(
                 <SkillDataProvider key={index}
                 src={image.Image}
@@ -37,8 +37,8 @@ const Skill = () => {
                 index={index}
                 />
             ))}
-        </div>
-        <div className='flex flex-row justify-around flex-wrap m-4 gap-5 items-center'>
+        </div> */}
+        {/* <div className='flex flex-row justify-around flex-wrap m-4 gap-5 items-center'>
             {Other_skill.map((image,index)=>(
                 <SkillDataProvider key={index}
                 src={image.Image}
@@ -47,7 +47,7 @@ const Skill = () => {
                 index={index}
                 />
             ))}
-        </div>
+        </div> */}
     </section>
   )
 }
